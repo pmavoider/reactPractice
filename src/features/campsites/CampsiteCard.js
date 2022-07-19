@@ -1,6 +1,6 @@
 import {Card, CardImg, CardImgOverlay, CardTitle} from "reactstrap";
 
-const CampsiteCard = () =>{
+const CampsiteCard = (props) =>{
     return (
         <Card >
             <CardImg
@@ -8,7 +8,8 @@ const CampsiteCard = () =>{
                 src={props.campsite.image}
                 alt={props.campsite.image} />
             <CardImgOverlay>
-            <CardTitle>{props.campsite.name}</CardTitle> </CardImgOverlay>
+            <CardTitle>{props.campsite.name}</CardTitle>
+             </CardImgOverlay>
         </Card>
     )
 }
