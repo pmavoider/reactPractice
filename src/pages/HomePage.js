@@ -1,7 +1,13 @@
+import SubHeader from "../components/SubHeader";
+import {Container } from "reactstrap"
+import DisplayList from "../features/display/DisplayList";
 
 const HomePage = () => {
     return(
-        <div>Home Page</div>
+        <Container>
+            <SubHeader />
+            <DisplayList />
+        </Container>
     )
 }
 export default HomePage; 
