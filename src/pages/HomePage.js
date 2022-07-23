@@ -5,7 +5,7 @@ import DisplayList from "../features/display/DisplayList";
 const HomePage = () => {
     return(
         <Container>
-            <SubHeader />
+            <SubHeader current={"Home"} />
             <DisplayList />
         </Container>
     )

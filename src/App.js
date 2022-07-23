@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage"
 import HomePage from "./pages/HomePage"
 import CampsitesDetailPage from "./pages/CampsiteDetailPage";
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
+import AboutUs from "./pages/AboutPage"
 
 
 
@@ -22,6 +23,7 @@ function App() {
         path="directory/:campsiteId"
         element={<CampsiteDetailPage />}
         />
+        <Route path="about" element={<AboutUs />} />
     </Routes>
     <Footer />
 </div>
