@@ -3,7 +3,7 @@
 import { Col } from "reactstrap"
 import Partner from "./Partner"
 import {SelectAllPartners} from "./PartnerSlice";
-import {Link} from "react-router-dom"
+
 
 const PartnerList = ({}) => {
     const partners = SelectAllPartners();
