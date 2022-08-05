@@ -1,22 +1,30 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import { Formik, Field, Form,ErrorMessage } from "formik";
 import { FormGroup, Label } from "reactstrap";
 import { validateContactForm } from "../../utils/validateCommentForm";
+import { addComment } from "./commentsSlice";
 
 
 const CommentForm = ({ campsiteId }) => {
     const [modalOpen, setModalOpen] = useState(false);
+
+    const dispatch = useDispatch();
+
     const handleSubmit = (values) => {
         const comment = {
             campsiteId: parseInt(campsiteId),
             rating: values.rating,
             author: values.author,
-            text: values.commentText
+            text: values.commentText,
+            date: new Date(Date.now()).toISOString()
         }
-        console.log(comment)
-        setModalOpen(false)
-    }
+        console.log("comment:" ,comment);
+        dispatch(addComment(comment));
+        setModalOpen(false);
+    };
+
     return (
         <>
             <Button outline={true} onClick={() => setModalOpen(true)}><i className="fa fa-pencil fa-lg" />Add Comment</Button>

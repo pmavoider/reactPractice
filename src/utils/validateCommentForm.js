@@ -5,7 +5,7 @@ export const validateContactForm =  (values) => {
     const errors = {}
     console.log(values)
 
-    if(!values.rating || "Select..."){
+    if(!values.rating || values.rating === "Select..."){
         errors.rating = "Required"
     }
 
