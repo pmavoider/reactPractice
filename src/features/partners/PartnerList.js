@@ -1,22 +1,26 @@
 
 
-import { Col } from "reactstrap"
+import { Col, Row } from "reactstrap"
 import Partner from "./Partner"
 import {SelectAllPartners} from "./PartnerSlice";
+import { useSelector } from "react-redux";
 
 
-const PartnerList = ({}) => {
-    const partners = SelectAllPartners();
+const PartnerList = () => {
+    const partners = useSelector(
+        SelectAllPartners);
 
     return (
         <Col className="mt-4" >
-            {partners.map((partner) => {
-                return (
-                    <div md="5" className="d-flex mb-5" key={partner.id} >
-                        <Partner partner={partner} />
-                    </div>
-                )
-            })}
+            <Row>
+                {partners.map((partner) => {
+                    return (
+                        <div md="5" className="d-flex mb-5" key={partner.id} >
+                            <Partner partner={partner} />
+                        </div>
+                    )
+                })}
+            </Row>
         </Col>
     )
 }
