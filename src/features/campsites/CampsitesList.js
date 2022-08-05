@@ -2,9 +2,11 @@ import { Col, Row } from "reactstrap"
 import CampsiteCard from "./CampsiteCard"
 import {selectAllCampsites} from "./CampsitesSlice";
 import {Link} from "react-router-dom"
+import { useSelector } from "react-redux";
 
 const CampsitesList = ({setCampsiteId}) => {
-    const campsites = selectAllCampsites();
+    const campsites = useSelector(selectAllCampsites)
+    console.log("campsites" , campsites)
 
     return (
         <Row className="ms-auto">
