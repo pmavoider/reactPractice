@@ -8,10 +8,19 @@ import HomePage from "./pages/HomePage"
 import CampsitesDetailPage from "./pages/CampsiteDetailPage";
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutUs from "./pages/AboutPage"
-
+import { useEffect } from 'react';
+import {useDispatch} from "react-redux"
+import {fetchCampsites} from "../src/features/campsites/CampsitesSlice"
 
 
 function App() {
+
+const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch(fetchCampsites())
+}, [dispatch]);
+
   return (
     <div className='App'>
    <Header />
